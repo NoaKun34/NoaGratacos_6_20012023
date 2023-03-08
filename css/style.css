@@ -42,9 +42,42 @@ h1 {
 .photographer_section article h2 {
     color: #D3573C;
     font-size: 36px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3px;
 }
 
 .photographer_section article img {
     height: 200px;
     width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+#photographerContainer a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.desc {
+    margin: 3px;
+    line-height: 13px;
+}
+
+#location {
+    font-size: 13px;
+    color: #901C1C;
+    font-weight: 400;
+}
+
+#tagline {
+    font-size: 10px;
+}
+
+#tjm {
+    font-size: 9px;
 }
