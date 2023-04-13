@@ -197,3 +197,83 @@ h1 {
     object-fit: cover;
     object-position: center;
 }
+
+.dataContainer .mediaInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mediaInfo .likesContainer {
+    display: flex;
+    flex-direction: row;
+    margin: auto 0;
+}
+
+.mediaInfo .mediaLikes {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: right;
+    color: #911C1C;
+    margin-right: 5px;
+}
+
+.mediaInfo .heart {
+    width: 17.5px;
+    height: 18.35px;
+    margin: auto 0;
+}
+
+.dataContainer h2 {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    color: #911C1C;
+    margin: auto 0;
+}
+
+.tjmContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #DB8876;
+    border-radius: 5px;
+    height: 89px;
+    width: 376px;
+    margin-left: 70%;
+    position: sticky;
+    bottom: 0px;
+}
+
+.tjmContainer .likesTotalContainer {
+    display: flex;
+    margin-left: 35px;
+}
+
+.tjmContainer p {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: right;
+    color: #000000;
+    margin: auto 0;
+}
+
+.tjmContainer .tjm {
+    margin-right: 35px;
+}
+
+.tjmContainer .totalHeart {
+    fill: black;
+    width: 17.5px;
+    height: 18.35px;
+    margin: auto 0;
+    margin-left: 5px;
+}

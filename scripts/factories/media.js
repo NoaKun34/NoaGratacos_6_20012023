@@ -31,19 +31,28 @@ function imageFactory(data) {
         const descContainer = document.createElement('div');
         descContainer.setAttribute("class", "desc");
         
-        const likesElement = document.createElement('p');
-        likesElement.setAttribute("class", "mediaLikes");
-        likesElement.textContent = likes;
-        
         const infoElement = document.createElement('div');
         infoElement.setAttribute("class", "mediaInfo");
         
         const titleElement = document.createElement('h2');
         titleElement.setAttribute("class", "mediaTitle");
         titleElement.textContent = title;
+
+        const likesContainer = document.createElement('div');
+        likesContainer.setAttribute("class", "likesContainer");
+
+        const likesElement = document.createElement('p');
+        likesElement.setAttribute("class", "mediaLikes");
+        likesElement.textContent = likes;
+
+        const heartElement = document.createElement('img');
+        heartElement.setAttribute("src", "assets/icons/heart.svg");
+        heartElement.setAttribute("class", "heart");
         
         infoElement.appendChild(titleElement);
-        infoElement.appendChild(likesElement);
+        infoElement.appendChild(likesContainer);
+        likesContainer.appendChild(likesElement);
+        likesContainer.appendChild(heartElement);
 
         article.appendChild(img);
         article.appendChild(infoElement);
@@ -66,6 +75,7 @@ function videoFactory(data) {
         const video = document.createElement('video');
         video.setAttribute("src", videoPath);
         video.setAttribute("alt", title);
+        video.setAttribute("type", "video/mp4");
 
         const descContainer = document.createElement('div');
         descContainer.setAttribute("class", "desc");

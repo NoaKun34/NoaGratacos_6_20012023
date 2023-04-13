@@ -15,34 +15,86 @@ async function getPhotographersData() {
     }
 }
 
+function totalLikes(data) {
+    let totalLikes = 0;
+    const likesP = document.querySelector(".likesTotal");
+
+    data.forEach((item) => {
+        totalLikes += item.likes;
+    });
+    likesP.textContent = totalLikes;
+
+    return totalLikes;
+}
 
 async function displayMedia(data, photographerId) {
-    const medias = [];
-    //const dataContainer = document.querySelector(".dataContainer");
-  
-    data.forEach((item) => {
-      if (item.photographerId === photographerId) {
-        medias.push(item);
-        console.log(item.likes);
-      }
-    });
+    const testType = 1;
+    const medias = searchMedia(data, photographerId);
+    const sorted = mediaSort(medias, testType);
 
-    medias.forEach((media) => {
-        //const mediaCard = selectFactory(media);
-        //dataContainer.appendChild(mediaCard);
+    totalLikes(medias);
+
+    sorted.forEach((media) => {
         selectFactory(media);
     });
-    console.log(medias);
     return medias;
 }
 
-async function displayPhotographerData(data, id) {
+function searchMedia(data, photographerId) {
+    const medias = [];
+
+    data.forEach((item) => {
+        if (item.photographerId === photographerId) {
+            medias.push(item);
+        }
+    });
+
+    return medias;
+}
+
+function sortByTitle(data) {
+    const sorted = [...data].sort((a, b) => {
+        const titleA = a.title.toUpperCase();
+        const titleB = b.title.toUpperCase();
+
+        if (titleA < titleB) {
+            return -1;
+        }
+        if (titleA > titleB) {
+            return 1;
+        }
+        return 0;
+    });
+    return sorted;
+}
+
+function mediaSort(data, type) {
+    if (type === 1) {
+        data.sort((a, b) => b.likes - a.likes);
+        return data;
+    } else if (type === 2) {
+        data.forEach((item) => {
+            item.date = new Date(item.date);
+        });
+        data.sort((a, b) => a.date - b.date);
+        return data;
+    } else if (type === 3) {
+        const temp = sortByTitle(data);
+        return temp;
+    }
+}
+
+function displayPhotographerData(data, id) {
     const photographerData = data.find((item) => item.id === id);
-    const { name, city, country, tagline, portrait } = photographerData;
+    const { name, city, country, tagline, portrait, price } = photographerData;
     const location = `${city}, ${country}`;
     const photographersInfoSection = document.querySelector(".photographerInfo");
     const photographerSelfi = document.getElementById("photographerSelfi");
     const picture = `assets/photos/photographers_selfi/${portrait}`;
+
+    const tjm = `${price}€/jour`;
+    const tjmElement = document.querySelector(".tjm");
+    tjmElement.textContent = tjm;
 
     const h1 = document.createElement("h1");
     h1.setAttribute("class", "photographerName");
@@ -62,13 +114,11 @@ async function displayPhotographerData(data, id) {
     return photographerData;
 }
 
-//async function displayData(photographerData) {}
-
 async function initPhotographer() {
     console.log("Test starting photographer");
     const photographerData = await getPhotographersData();
-    await displayPhotographerData(photographerData.photographers, photographerID);
-    await displayMedia(photographerData.media, photographerID);
+    displayPhotographerData(photographerData.photographers, photographerID);
+    displayMedia(photographerData.media, photographerID);
 }
 
 initPhotographer();
