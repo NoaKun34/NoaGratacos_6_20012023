@@ -81,3 +81,119 @@ h1 {
 #tjm {
     font-size: 9px;
 }
+
+/* Page individuelle des photographes */
+
+.photograph-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 50px;
+}
+
+
+.photographerInfo {
+    margin: auto 0;
+}
+
+.photograph-header h1 {
+    font-size: 64px;
+    font-family: 'DM Sans';
+    line-height: 83px;
+    font-style: normal;
+    font-weight: 400;
+    color: #D3573C;
+    margin: 0px 0px 20px;
+}
+
+.photographerLocation {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    color: #901C1C;
+    margin: 0px 0px 20px;
+}
+
+.photographerTagline {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #525252;
+    margin: 0px;
+}
+
+.photograph-header .contact_button {
+    margin: auto 0;
+}
+
+.photograph-header img {
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    object-fit: cover;
+    object-position: center;
+    margin: auto 0;
+}
+
+.filter {
+    margin: 20px 100px;
+}
+
+.filter label {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: #000000;
+}
+
+.filter select {
+    margin-left: 25px;
+    background-color: #911C1C;
+    border: 0px;
+    border-radius: 5px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: #FFFFFF;
+}
+
+.filter option {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: #FFFFFF;
+}
+
+.dataContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0px 100px;
+}
+
+.dataContainer img {
+    width: 350px;
+    height: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.dataContainer video {
+    width: 350px;
+    height: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center;
+}
