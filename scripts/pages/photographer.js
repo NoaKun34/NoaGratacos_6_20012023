@@ -15,10 +15,8 @@ const select = document.querySelector(".selectSort");
 select.addEventListener("change", (event) => {
     dataContainer.innerHTML = "";
     const sortType = event.target.value;
-    console.log(mediaTable);
     let parsedSortType = parseInt(sortType);
-    console.log(parsedSortType);
-    displayMedia(mediaTable, photographerID, parsedSortType);
+    displayMedia(mediaTable, parsedSortType);
 });
 
 //popularity.addEventListener("click", changeSort(1));
@@ -51,20 +49,15 @@ function totalLikes(data) {
     return totalLikes;
 }
 
-async function displayMedia(data, photographerId, sortType) {
-    console.log("début displayMedia");
-    const medias = searchMedia(data, photographerId);
-    const sorted = mediaSort(medias, sortType);
+async function displayMedia(data, sortType) {
+    const sorted = mediaSort(data, sortType);
 
-    totalLikes(medias);
-
-    console.log(sorted);
+    totalLikes(data);
 
     sorted.forEach((media) => {
         selectFactory(media);
     });
-    console.log("fin displayMedia");
-    return medias;
+    return sorted;
 }
 
 function searchMedia(data, photographerId) {
@@ -142,12 +135,13 @@ function displayPhotographerData(data, id) {
 }
 
 async function initPhotographer() {
-    console.log("Test starting photographer");
     const photographerData = await getPhotographersData();
     displayPhotographerData(photographerData.photographers, photographerID);
     const sortType = 1;
-    mediaTable = photographerData.media;
-    displayMedia(photographerData.media, photographerID, sortType);
+    let medias = searchMedia(photographerData.media, photographerID);
+    mediaTable = medias;
+    displayMedia(medias, sortType);
+    test();
 }
 
 initPhotographer();
