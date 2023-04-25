@@ -2,6 +2,30 @@ const url = new URL(location.href);
 const getParams = url.searchParams.get("id");
 const photographerID = parseInt(getParams);
 
+let mediaTable = [];
+
+const popularity = document.getElementById("popularity");
+const date = document.getElementById("date");
+const alpha = document.getElementById("alpha");
+
+const dataContainer = document.querySelector(".dataContainer");
+
+const select = document.querySelector(".selectSort");
+
+select.addEventListener("change", (event) => {
+    dataContainer.innerHTML = "";
+    const sortType = event.target.value;
+    console.log(mediaTable);
+    let parsedSortType = parseInt(sortType);
+    console.log(parsedSortType);
+    displayMedia(mediaTable, photographerID, parsedSortType);
+});
+
+//popularity.addEventListener("click", changeSort(1));
+//date.addEventListener("click", changeSort(2));
+//alpha.addEventListener("click", changeSort(3));
+
+
 async function getPhotographersData() {
     const dataPath = '../../data/photographers.json';
 
@@ -27,16 +51,19 @@ function totalLikes(data) {
     return totalLikes;
 }
 
-async function displayMedia(data, photographerId) {
-    const testType = 1;
+async function displayMedia(data, photographerId, sortType) {
+    console.log("début displayMedia");
     const medias = searchMedia(data, photographerId);
-    const sorted = mediaSort(medias, testType);
+    const sorted = mediaSort(medias, sortType);
 
     totalLikes(medias);
+
+    console.log(sorted);
 
     sorted.forEach((media) => {
         selectFactory(media);
     });
+    console.log("fin displayMedia");
     return medias;
 }
 
@@ -118,7 +145,9 @@ async function initPhotographer() {
     console.log("Test starting photographer");
     const photographerData = await getPhotographersData();
     displayPhotographerData(photographerData.photographers, photographerID);
-    displayMedia(photographerData.media, photographerID);
+    const sortType = 1;
+    mediaTable = photographerData.media;
+    displayMedia(photographerData.media, photographerID, sortType);
 }
 
 initPhotographer();

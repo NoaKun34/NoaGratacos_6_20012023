@@ -24,10 +24,10 @@
   <div class="container">
     <div class="filter">
       <label for="filterSelect">Filtrer par</label>
-      <select name="filterSelect" id="filterSelect">
-        <option value="popularity">Popularité</option>
-        <option value="date">Date</option>
-        <option value="title">Titre</option>
+      <select class="selectSort" name="filterSelect" id="filterSelect">
+        <option id="popularity" value="1">Popularité</option>
+        <option id="date" value="2">Date</option>
+        <option id="alpha" value="3">Titre</option>
       </select>
     </div>
     <div class="dataContainer"></div>
@@ -41,8 +41,14 @@
       </header>
       <form>
         <div>
-          <label>Prénom</label>
-          <input />
+          <label for="firstname">Prénom</label>
+          <input type="text" id="firstname" name="firstname"/>
+          <label for="lastname">Nom</label>
+          <input type="text" id="lastname" name="lastname"/>
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email"/>
+          <label for="message">Message</label>
+          <input type="text" id="message" name="message"/>
         </div>
         <button class="contact_button">Envoyer</button>
       </form>
@@ -56,9 +62,9 @@
     </div>
     <p class="tjm"></p>
   </div>
+  <script src="/scripts/utils/contactForm.js"></script>
   <script src="/scripts/factories/media.js"></script>
   <script src="/scripts/pages/photographer.js"></script>
-  <script src="/scripts/utils/contactForm.js"></script>
 </body>
 
 </html>
