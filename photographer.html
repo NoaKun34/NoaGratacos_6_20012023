@@ -11,20 +11,21 @@
 
 <body>
   <header>
-    <a href="index.html"><img src="assets/images/logo.png" class="logo" aria-label="Fisheye Home page" /></a>
+    <a href="index.html"><img src="assets/images/logo.png" class="logo" aria-label="Fisheye Home page"
+        alt="Fisheye Home page" /></a>
   </header>
   <main id="main">
     <div class="photograph-header">
       <div class="photographerInfo"></div>
-      <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      <img id="photographerSelfi" alt="test">
+      <button class="contact_button" onclick="displayModal()" aria-label="Me contacter">Contactez-moi</button>
+      <img id="photographerSelfi" alt="">
     </div>
   </main>
 
   <div class="container">
     <div class="filter">
       <label for="filterSelect">Filtrer par</label>
-      <select class="selectSort" name="filterSelect" id="filterSelect">
+      <select class="selectSort" name="filterSelect" id="filterSelect" aria-label="Par ordre de">
         <option id="popularity" value="1">Popularité</option>
         <option id="date" value="2">Date</option>
         <option id="alpha" value="3">Titre</option>
@@ -34,16 +35,19 @@
   </div>
 
   <div class="lightboxContainer">
-    <div class="lightboxContent">
-      <img id="lightboxLeftArrow" src="assets/icons/left_arrow.png" alt="left_arrow" onclick="previousMedia()">
+    <div class="lightboxContent" aria-label="Media closeup view">
+      <img id="lightboxLeftArrow" src="assets/icons/left_arrow.png" alt="left_arrow" onclick="previousMedia()"
+        aria-label="Média précédent">
       <div class="lightboxContentContainer">
-        <img id="lightboxContentImg" src="" alt="">
-        <video id="lightboxContentVideo" controls src=""></video>
+        <img id="lightboxContentImg" src="" alt="" aria-label="">
+        <video id="lightboxContentVideo" controls src="" alt="" aria-label=""></video>
         <h1 id="lightboxContentTitle"></h1>
       </div>
       <div class="closeAndRight">
-        <img id="closeLightbox" src="assets/icons/close.png" alt="" onclick="closeLightbox()">
-        <img id="lightboxRightArrow" src="assets/icons/right_arrow.png" alt="" onclick="nextMedia()">
+        <img id="closeLightbox" src="assets/icons/close.png" alt="" onclick="closeLightbox()"
+          aria-label="Fermer la modale">
+        <img id="lightboxRightArrow" src="assets/icons/right_arrow.png" alt="" onclick="nextMedia()"
+          aria-label="Média suivant">
       </div>
     </div>
   </div>
@@ -51,12 +55,15 @@
   <div id="contact_modal">
     <div class="modal">
       <header>
-        <h2>Contactez-moi</h2>
-        <img src="assets/icons/close.svg" onclick="closeModal()" />
+        <div class="contactHeaderTitle">
+          <h2>Contactez-moi</h2>
+          <h2 id="contactPhotographerName"></h2>
+        </div>
+        <img id="contactClose" src="assets/icons/close.svg" onclick="closeModal()" />
       </header>
       <form>
         <div>
-          <label for="firstname">Prénom</label>
+          <label id="contactLabelFirstname" for="firstname">Prénom</label>
           <input type="text" id="firstname" name="firstname" />
           <label for="lastname">Nom</label>
           <input type="text" id="lastname" name="lastname" />
@@ -77,9 +84,9 @@
     </div>
     <p class="tjm"></p>
   </div>
-  <script src="/scripts/utils/contactForm.js"></script>
   <script src="/scripts/factories/media.js"></script>
   <script src="/scripts/pages/photographer.js"></script>
+  <script src="/scripts/utils/contactForm.js"></script>
   <script src="/scripts/utils/lightbox.js"></script>
 </body>
 

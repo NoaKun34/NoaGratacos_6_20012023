@@ -55,6 +55,8 @@ function openLightbox(mediaId) {
         lightboxContainer.style.display = 'block';
         lightboxImage.style.display = 'block';
         lightboxImage.src = imagePath;
+        lightboxImage.setAttribute("alt", media.title);
+        lightboxImage.setAttribute("aria-label", media.title);
         lightboxMediaTitle.textContent = media.title;
     } else if (image === undefined) {
         let media = searchMediaId(mediaId);
@@ -64,6 +66,8 @@ function openLightbox(mediaId) {
         lightboxContainer.style.display = 'block';
         lightboxVideo.style.display = 'block';
         lightboxVideo.src = videoPath;
+        lightboxVideo.setAttribute("alt", media.title);
+        lightboxVideo.setAttribute("aria-label", media.title);
         lightboxMediaTitle.textContent = media.title;
     }
 }

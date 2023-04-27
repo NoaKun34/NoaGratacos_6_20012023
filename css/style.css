@@ -291,6 +291,23 @@ h1 {
 
 .modal {
     margin-top: 50px;
+    width: 35%;
+}
+
+.contactHeaderTitle {
+    line-height: 5px;
+}
+
+#contactClose {
+    margin-bottom: 50px;
+}
+
+#contactPhotographerName {
+    text-align: left;
+}
+
+#contactLabelFirstname {
+    margin-top: 15px;
 }
 
 /* Lightbox styles */

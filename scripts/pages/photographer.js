@@ -1,6 +1,7 @@
 const url = new URL(location.href);
 const getParams = url.searchParams.get("id");
 const photographerID = parseInt(getParams);
+let photographerName = null;
 
 let mediaTable = [];
 
@@ -103,6 +104,7 @@ function displayPhotographerData(data, id) {
     const photographerData = data.find((item) => item.id === id);
     const { name, city, country, tagline, portrait, price } = photographerData;
     const location = `${city}, ${country}`;
+    photographerName = name;
     const photographersInfoSection = document.querySelector(".photographerInfo");
     const photographerSelfi = document.getElementById("photographerSelfi");
     const picture = `assets/photos/photographers_selfi/${portrait}`;
@@ -121,12 +123,37 @@ function displayPhotographerData(data, id) {
     taglineElement.setAttribute("class", "photographerTagline");
     taglineElement.textContent = tagline;
     photographerSelfi.setAttribute("src", picture);
+    photographerSelfi.setAttribute("aria-label", name);
 
     photographersInfoSection.appendChild(h1);
     photographersInfoSection.appendChild(locationElement);
     photographersInfoSection.appendChild(taglineElement);
 
     return photographerData;
+}
+
+function mediasLikes(mediaId) {
+    const elementId = `likes-${mediaId}`;
+    const mediaLikeCounter = document.getElementById(elementId);
+    const totalLikeCounter = document.querySelector(".likesTotal");
+
+    let mediaCount = parseInt(mediaLikeCounter.innerText);
+    let totalCount = parseInt(totalLikeCounter.innerText);
+
+    const liked = mediaLikeCounter.classList.contains("liked");
+    if (liked) {
+        mediaLikeCounter.classList.remove("liked");
+        mediaCount--;
+        totalCount--;
+        mediaLikeCounter.textContent = mediaCount;
+        totalLikeCounter.textContent = totalCount;
+    } else {
+        mediaLikeCounter.classList.add("liked");
+        mediaCount++;
+        totalCount++;
+        mediaLikeCounter.textContent = mediaCount;
+        totalLikeCounter.textContent = totalCount;
+    }
 }
 
 async function initPhotographer() {
