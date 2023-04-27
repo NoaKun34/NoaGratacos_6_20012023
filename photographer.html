@@ -35,11 +35,15 @@
 
   <div class="lightboxContainer">
     <div class="lightboxContent">
-      <img id="lightboxLeftArrow" src="assets/icons/left_arrow.png" alt="left_arrow">
-      <img id="lightboxContentImg" src="assets/photos/243/Animals_Rainbow.jpg" alt="">
+      <img id="lightboxLeftArrow" src="assets/icons/left_arrow.png" alt="left_arrow" onclick="previousMedia()">
+      <div class="lightboxContentContainer">
+        <img id="lightboxContentImg" src="" alt="">
+        <video id="lightboxContentVideo" controls src="assets/photos/243/Animals_Wild_Horses_in_the_mountains.mp4"></video>
+        <h1 id="lightboxContentTitle"></h1>
+      </div>
       <div class="closeAndRight">
-        <img id="closeLightbox" src="assets/icons/close.svg" alt="">
-        <img id="lightboxRightArrow" src="assets/icons/right_arrow.png" alt="">
+        <img id="closeLightbox" src="assets/icons/close.png" alt="" onclick="closeLightbox()">
+        <img id="lightboxRightArrow" src="assets/icons/right_arrow.png" alt="" onclick="nextMedia()">
       </div>
     </div>
   </div>
@@ -53,13 +57,13 @@
       <form>
         <div>
           <label for="firstname">Prénom</label>
-          <input type="text" id="firstname" name="firstname"/>
+          <input type="text" id="firstname" name="firstname" />
           <label for="lastname">Nom</label>
-          <input type="text" id="lastname" name="lastname"/>
+          <input type="text" id="lastname" name="lastname" />
           <label for="email">Email</label>
-          <input type="text" id="email" name="email"/>
+          <input type="text" id="email" name="email" />
           <label for="message">Message</label>
-          <input type="text" id="message" name="message"/>
+          <input type="text" id="message" name="message" />
         </div>
         <button class="contact_button">Envoyer</button>
       </form>

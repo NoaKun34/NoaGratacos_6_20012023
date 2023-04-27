@@ -306,7 +306,57 @@ h1 {
     background-color: #c4c4c466;
 }
 
+.lightboxContent {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 100px;
+    left: 355px;
+}
+
+#lightboxLeftArrow {
+    height: 48px;
+    width: 30px;
+    margin-top: 235px;
+    margin-right: 34px;
+}
+
+#lightboxRightArrow {
+    height: 48px;
+    width: 30px;
+    margin-top: 185px;
+}
+
+.closeAndRight {
+    display: flex;
+    flex-direction: column;
+    margin-left: 34px;
+    margin-top: 15px;
+}
+
 #lightboxContentImg {
+    display: none;
     width: 600px;
     height: 600px;
+    border-radius: 5px;
+    object-position: center;
+    object-fit: cover;
+}
+
+#lightboxContentVideo {
+    display: none;
+    width: 600px;
+    height: 600px;
+    border-radius: 5px;
+    object-position: center;
+    object-fit: cover;
+}
+
+#lightboxContentTitle {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    color: #911C1C;
 }

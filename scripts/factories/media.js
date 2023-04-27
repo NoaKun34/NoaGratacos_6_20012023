@@ -27,6 +27,8 @@ function imageFactory(data) {
         const img = document.createElement('img');
         img.setAttribute("src", imagePath);
         img.setAttribute("alt", title);
+        img.setAttribute("id", id);
+        img.setAttribute('onclick', `openLightbox(${id})`);
 
         const descContainer = document.createElement('div');
         descContainer.setAttribute("class", "desc");
@@ -76,6 +78,8 @@ function videoFactory(data) {
         video.setAttribute("src", videoPath);
         video.setAttribute("alt", title);
         video.setAttribute("type", "video/mp4");
+        video.setAttribute("id", id);
+        video.setAttribute('onclick', `openLightbox(${id})`);
 
         const descContainer = document.createElement('div');
         descContainer.setAttribute("class", "desc");

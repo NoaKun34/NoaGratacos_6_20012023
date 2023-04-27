@@ -19,11 +19,6 @@ select.addEventListener("change", (event) => {
     displayMedia(mediaTable, parsedSortType);
 });
 
-//popularity.addEventListener("click", changeSort(1));
-//date.addEventListener("click", changeSort(2));
-//alpha.addEventListener("click", changeSort(3));
-
-
 async function getPhotographersData() {
     const dataPath = '../../data/photographers.json';
 
@@ -141,7 +136,6 @@ async function initPhotographer() {
     let medias = searchMedia(photographerData.media, photographerID);
     mediaTable = medias;
     displayMedia(medias, sortType);
-    test();
 }
 
 initPhotographer();
