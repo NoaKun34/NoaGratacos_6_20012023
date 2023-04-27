@@ -1,8 +1,8 @@
 function selectFactory(data) {
-    const {image, video} = data;
+    const { image, video } = data;
     const dataContainer = document.querySelector(".dataContainer");
 
-    if (image === undefined ) {
+    if (image === undefined) {
         const videoModel = videoFactory(data);
         const videoDOM = videoModel.getMediaCardDOM();
         dataContainer.appendChild(videoDOM);
@@ -23,7 +23,7 @@ function imageFactory(data) {
     function getMediaCardDOM() {
         const article = document.createElement('article');
         article.setAttribute("class", "media");
-        
+
         const img = document.createElement('img');
         img.setAttribute("src", imagePath);
         img.setAttribute("alt", title);
@@ -32,10 +32,10 @@ function imageFactory(data) {
 
         const descContainer = document.createElement('div');
         descContainer.setAttribute("class", "desc");
-        
+
         const infoElement = document.createElement('div');
         infoElement.setAttribute("class", "mediaInfo");
-        
+
         const titleElement = document.createElement('h2');
         titleElement.setAttribute("class", "mediaTitle");
         titleElement.textContent = title;
@@ -50,7 +50,7 @@ function imageFactory(data) {
         const heartElement = document.createElement('img');
         heartElement.setAttribute("src", "assets/icons/heart.svg");
         heartElement.setAttribute("class", "heart");
-        
+
         infoElement.appendChild(titleElement);
         infoElement.appendChild(likesContainer);
         likesContainer.appendChild(likesElement);
@@ -58,10 +58,10 @@ function imageFactory(data) {
 
         article.appendChild(img);
         article.appendChild(infoElement);
-        
+
         return (article);
     }
-    
+
     return { id, photographerId, title, imagePath, likes, date, price, getMediaCardDOM };
 }
 
@@ -83,37 +83,26 @@ function videoFactory(data) {
 
         const descContainer = document.createElement('div');
         descContainer.setAttribute("class", "desc");
-        
+
         const likesElement = document.createElement('p');
         likesElement.setAttribute("class", "mediaLikes");
         likesElement.textContent = likes;
-        
+
         const infoElement = document.createElement('div');
         infoElement.setAttribute("class", "mediaInfo");
-        
+
         const titleElement = document.createElement('h2');
         titleElement.setAttribute("class", "mediaTitle");
         titleElement.textContent = title;
-        
+
         infoElement.appendChild(titleElement);
         infoElement.appendChild(likesElement);
-        
+
         article.appendChild(video);
         article.appendChild(infoElement);
-        
+
         return (article);
     }
-    
+
     return { id, photographerId, title, videoPath, likes, date, price, getMediaCardDOM };
 }
-
-
-//function mediaFactory(data) {
-//    const {image, video} = data;
-//
-//    if (image === undefined ) {
-//        videoFactory(data);
-//    } else if (video === undefined) {
-//        imageFactory(data);
-//    }
-//}

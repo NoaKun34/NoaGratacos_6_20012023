@@ -1,5 +1,4 @@
 const lightboxContainer = document.querySelector('.lightboxContainer');
-//const lightboxImage = document.getElementById('#lightboxContentImg');
 const lightboxImage = document.querySelector('#lightboxContentImg');
 const lightboxVideo = document.querySelector('#lightboxContentVideo');
 const lightboxMediaTitle = document.querySelector('#lightboxContentTitle');

@@ -11,8 +11,8 @@ function closeModal() {
 const form = document.querySelector('form');
 
 form.addEventListener('submit', (event) => {
-    event.preventDefault(); // empêche l'envoi du formulaire
+    event.preventDefault();
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
-    console.log(data); // affiche les valeurs saisies dans la console
+    console.log(data);
 });
