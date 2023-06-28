@@ -32,6 +32,8 @@ function closeLightbox() {
     lightboxContainer.style.display = 'none';
     lightboxImage.style.display = 'none';
     lightboxVideo.style.display = 'none';
+
+    document.removeEventListener('keydown', keyboardHandler);
 }
 
 function searchMediaId(id) {

@@ -11,6 +11,10 @@ const alpha = document.getElementById("alpha");
 
 const dataContainer = document.querySelector(".dataContainer");
 
+const mediaEnterClick = document.querySelector(".mediaEnter");
+
+//mediaEnterClick.addEventListener('keydown', keyboardClick);
+
 const select = document.querySelector(".selectSort");
 
 select.addEventListener("change", (event) => {
@@ -19,6 +23,17 @@ select.addEventListener("change", (event) => {
     let parsedSortType = parseInt(sortType);
     displayMedia(mediaTable, parsedSortType);
 });
+
+function keyboardClick(event, elementType, id) {
+    if (event.key === 'Enter') {
+        if (elementType === 2 || elementType === 1) {
+            openLightbox(id);
+        }
+        if (elementType === 3) {
+            mediasLikes(id);
+        }
+    }
+}
 
 async function getPhotographersData() {
     const dataPath = '../../data/photographers.json';
@@ -168,6 +183,7 @@ async function initPhotographer() {
     let medias = searchMedia(photographerData.media, photographerID);
     mediaTable = medias;
     displayMedia(medias, sortType);
+    //mediaEnterClick.addEventListener('keydown', keyboardClick);
 }
 
 initPhotographer();

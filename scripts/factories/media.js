@@ -21,6 +21,8 @@ function imageFactory(data) {
     const imagePath = `assets/photos/${photographerId}/${image}`;
     const aria = `${title}, closeup view`;
 
+    const checker = 1;
+
     function getMediaCardDOM() {
         const article = document.createElement('article');
         article.setAttribute("class", "media");
@@ -29,8 +31,11 @@ function imageFactory(data) {
         img.setAttribute("src", imagePath);
         img.setAttribute("alt", title);
         img.setAttribute("id", id);
+        img.setAttribute("class", "mediaEnter");
+        img.setAttribute("tabindex", "0");
         img.setAttribute("aria-label", aria);
         img.setAttribute('onclick', `openLightbox(${id})`);
+        img.setAttribute('onkeydown', `keyboardClick(event, ${checker}, ${id})`);
 
         const descContainer = document.createElement('div');
         descContainer.setAttribute("class", "desc");
@@ -40,6 +45,7 @@ function imageFactory(data) {
 
         const titleElement = document.createElement('h2');
         titleElement.setAttribute("class", "mediaTitle");
+        titleElement.setAttribute("tabindex", "0");
         titleElement.textContent = title;
 
         const likesContainer = document.createElement('div');
@@ -55,7 +61,9 @@ function imageFactory(data) {
         heartElement.setAttribute("class", "heart");
         heartElement.setAttribute("aria-label", "likes");
         heartElement.setAttribute("alt", "likes");
+        heartElement.setAttribute("tabindex", "0");
         heartElement.setAttribute('onclick', `mediasLikes(${id})`);
+        heartElement.setAttribute('onkeydown', `keyboardClick(event, ${checkerHearth}, ${id})`);
 
         infoElement.appendChild(titleElement);
         infoElement.appendChild(likesContainer);
@@ -77,6 +85,9 @@ function videoFactory(data) {
     const videoPath = `assets/photos/${photographerId}/${video}`;
     const aria = `${title}, closeup view`;
 
+    const checker = 2;
+    const checkerHearth = 3;
+
     function getMediaCardDOM() {
         const article = document.createElement('article');
         article.setAttribute("class", "media");
@@ -86,8 +97,11 @@ function videoFactory(data) {
         video.setAttribute("alt", title);
         video.setAttribute("type", "video/mp4");
         video.setAttribute("id", id);
+        video.setAttribute("class", "mediaEnter");
+        video.setAttribute("tabindex", "0");
         video.setAttribute('onclick', `openLightbox(${id})`);
         video.setAttribute("aria-label", aria);
+        video.setAttribute('onkeydown', `keyboardClick(event, ${checker}, ${id})`);
 
         const descContainer = document.createElement('div');
         descContainer.setAttribute("class", "desc");
@@ -105,13 +119,16 @@ function videoFactory(data) {
         heartElement.setAttribute("class", "heart");
         heartElement.setAttribute("aria-label", "likes");
         heartElement.setAttribute("alt", "likes");
+        heartElement.setAttribute("tabindex", "0");
         heartElement.setAttribute('onclick', `mediasLikes(${id})`);
+        heartElement.setAttribute('onkeydown', `keyboardClick(event, ${checkerHearth}, ${id})`);
 
         const infoElement = document.createElement('div');
         infoElement.setAttribute("class", "mediaInfo");
 
         const titleElement = document.createElement('h2');
         titleElement.setAttribute("class", "mediaTitle");
+        titleElement.setAttribute("tabindex", "0");
         titleElement.textContent = title;
 
         infoElement.appendChild(titleElement);
