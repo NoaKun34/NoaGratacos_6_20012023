@@ -13,8 +13,6 @@ const dataContainer = document.querySelector(".dataContainer");
 
 const mediaEnterClick = document.querySelector(".mediaEnter");
 
-//mediaEnterClick.addEventListener('keydown', keyboardClick);
-
 const select = document.querySelector(".selectSort");
 
 select.addEventListener("change", (event) => {
@@ -183,7 +181,6 @@ async function initPhotographer() {
     let medias = searchMedia(photographerData.media, photographerID);
     mediaTable = medias;
     displayMedia(medias, sortType);
-    //mediaEnterClick.addEventListener('keydown', keyboardClick);
 }
 
 initPhotographer();

@@ -48,13 +48,10 @@ function searchMediaId(id) {
 function keyboardHandler(event) {
     if (event.key === 'ArrowLeft') {
         previousMedia();
-        console.log("ArrowLeft");
     } else if (event.key === 'ArrowRight') {
         nextMedia();
-        console.log("ArrowRight");
     } else if (event.key === 'Escape') {
         closeLightbox();
-        console.log("Escape");
     }
 }
 

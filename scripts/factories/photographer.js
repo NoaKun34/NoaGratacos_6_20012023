@@ -5,8 +5,6 @@ function photographerFactory(data) {
     const location = `${city}, ${country}`;
     const tjm = `${price}€/jour`;
 
-    console.log("Test dans la fonction photographerFactory");
-
     function getUserCardDOM() {
         const article = document.createElement('article');
         article.setAttribute("id", "photographerContainer");
