@@ -68,6 +68,10 @@ h1 {
     line-height: 13px;
 }
 
+.descElement {
+    text-align: center;
+}
+
 #location {
     font-size: 13px;
     color: #901C1C;
@@ -320,7 +324,7 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #c4c4c466;
+    background-color: #c4c4c4c4;
 }
 
 .lightboxContent {

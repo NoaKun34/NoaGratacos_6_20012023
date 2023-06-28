@@ -116,6 +116,10 @@ function displayPhotographerData(data, id) {
     const h1 = document.createElement("h1");
     h1.setAttribute("class", "photographerName");
     h1.textContent = name;
+    h1.setAttribute("tabindex", "2");
+    const infoElement = document.createElement("div");
+    infoElement.setAttribute("class", "infoElement");
+    infoElement.setAttribute("tabindex", "3");
     const locationElement = document.createElement("p");
     locationElement.setAttribute("class", "photographerLocation");
     locationElement.textContent = location;
@@ -126,8 +130,9 @@ function displayPhotographerData(data, id) {
     photographerSelfi.setAttribute("aria-label", name);
 
     photographersInfoSection.appendChild(h1);
-    photographersInfoSection.appendChild(locationElement);
-    photographersInfoSection.appendChild(taglineElement);
+    photographersInfoSection.appendChild(infoElement);
+    infoElement.appendChild(locationElement);
+    infoElement.appendChild(taglineElement);
 
     return photographerData;
 }

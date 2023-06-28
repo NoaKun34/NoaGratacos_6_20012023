@@ -43,6 +43,19 @@ function searchMediaId(id) {
     return null;
 }
 
+function keyboardHandler(event) {
+    if (event.key === 'ArrowLeft') {
+        previousMedia();
+        console.log("ArrowLeft");
+    } else if (event.key === 'ArrowRight') {
+        nextMedia();
+        console.log("ArrowRight");
+    } else if (event.key === 'Escape') {
+        closeLightbox();
+        console.log("Escape");
+    }
+}
+
 function openLightbox(mediaId) {
     const { image, video } = searchMediaId(mediaId);
     actualMediaId = mediaId;
@@ -70,4 +83,6 @@ function openLightbox(mediaId) {
         lightboxVideo.setAttribute("aria-label", media.title);
         lightboxMediaTitle.textContent = media.title;
     }
+
+    document.addEventListener('keydown', keyboardHandler);
 }

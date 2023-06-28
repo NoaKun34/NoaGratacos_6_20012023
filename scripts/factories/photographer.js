@@ -10,13 +10,18 @@ function photographerFactory(data) {
     function getUserCardDOM() {
         const article = document.createElement('article');
         article.setAttribute("id", "photographerContainer");
+        article.setAttribute("tabindex", "-1");
         const img = document.createElement('img');
         img.setAttribute("src", picture)
         const link = document.createElement('a');
         link.href = `../../photographer.html?id=${id}`;
         link.setAttribute("aria-label", name);
+        link.setAttribute("tabindex", "0");
         const h2 = document.createElement('h2');
         h2.textContent = name;
+        const descElement = document.createElement('div');
+        descElement.setAttribute("class", "descElement");
+        descElement.setAttribute("tabindex", "0");
         const locationElement = document.createElement('p');
         locationElement.setAttribute("id", "location");
         locationElement.setAttribute("class", "desc");
@@ -33,9 +38,10 @@ function photographerFactory(data) {
         link.appendChild(img);
         link.appendChild(h2);
         article.appendChild(link);
-        article.appendChild(locationElement);
-        article.appendChild(taglineElement);
-        article.appendChild(tjmElement);
+        article.appendChild(descElement);
+        descElement.appendChild(locationElement);
+        descElement.appendChild(taglineElement);
+        descElement.appendChild(tjmElement);
         return (article);
     }
     return { name, picture, getUserCardDOM }

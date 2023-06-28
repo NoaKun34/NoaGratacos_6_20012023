@@ -11,21 +11,21 @@
 
 <body>
   <header>
-    <a href="index.html"><img src="assets/images/logo.png" class="logo" aria-label="Fisheye Home page"
+    <a href="index.html" tabindex="1"><img src="assets/images/logo.png" class="logo" aria-label="Fisheye Home page"
         alt="Fisheye Home page" /></a>
   </header>
   <main id="main">
     <div class="photograph-header">
       <div class="photographerInfo"></div>
-      <button class="contact_button" onclick="displayModal()" aria-label="Me contacter">Contactez-moi</button>
-      <img id="photographerSelfi" alt="">
+      <button class="contact_button" onclick="displayModal()" aria-label="Me contacter" tabindex="4">Contactez-moi</button>
+      <img id="photographerSelfi" alt="" tabindex="5">
     </div>
   </main>
 
   <div class="container">
     <div class="filter">
-      <label for="filterSelect">Filtrer par</label>
-      <select class="selectSort" name="filterSelect" id="filterSelect" aria-label="Par ordre de">
+      <label for="filterSelect" tabindex="7">Filtrer par</label>
+      <select class="selectSort" name="filterSelect" id="filterSelect" aria-label="Par ordre de" tabindex="8">
         <option id="popularity" value="1">Popularité</option>
         <option id="date" value="2">Date</option>
         <option id="alpha" value="3">Titre</option>
@@ -59,20 +59,20 @@
           <h2>Contactez-moi</h2>
           <h2 id="contactPhotographerName"></h2>
         </div>
-        <img id="contactClose" src="assets/icons/close.svg" onclick="closeModal()" />
+        <img id="contactClose" src="assets/icons/close.svg" onclick="closeModal()" aria-label="Fermer"/>
       </header>
       <form>
         <div>
           <label id="contactLabelFirstname" for="firstname">Prénom</label>
-          <input type="text" id="firstname" name="firstname" />
+          <input type="text" id="firstname" name="firstname" aria-label="Prénom"/>
           <label for="lastname">Nom</label>
-          <input type="text" id="lastname" name="lastname" />
+          <input type="text" id="lastname" name="lastname" aria-label="Nom"/>
           <label for="email">Email</label>
-          <input type="text" id="email" name="email" />
+          <input type="text" id="email" name="email" aria-label="Email"/>
           <label for="message">Message</label>
-          <input type="text" id="message" name="message" />
+          <input type="text" id="message" name="message" aria-label="Votre message"/>
         </div>
-        <button class="contact_button">Envoyer</button>
+        <button class="contact_button" aria-label="Envoyer">Envoyer</button>
       </form>
     </div>
   </div>
