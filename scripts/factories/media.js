@@ -22,6 +22,7 @@ function imageFactory(data) {
     const aria = `${title}, closeup view`;
 
     const checker = 1;
+    const checkerHearth = 3;
 
     function getMediaCardDOM() {
         const article = document.createElement('article');
