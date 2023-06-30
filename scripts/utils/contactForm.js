@@ -1,8 +1,10 @@
 function displayModal() {
     const modal = document.getElementById("contact_modal");
+    const modalContent = document.querySelector(".modal");
     const contactName = document.getElementById("contactPhotographerName");
     modal.style.display = "block";
     contactName.textContent = photographerName;
+    modalContent.focus();
 }
 
 function closeModal() {

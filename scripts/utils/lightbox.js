@@ -57,6 +57,7 @@ function keyboardHandler(event) {
 
 function openLightbox(mediaId) {
     const { image, video } = searchMediaId(mediaId);
+    const lightboxContentFocus = document.querySelector('.lightboxContent');
     actualMediaId = mediaId;
 
     if (video === undefined) {
@@ -70,6 +71,7 @@ function openLightbox(mediaId) {
         lightboxImage.setAttribute("alt", media.title);
         lightboxImage.setAttribute("aria-label", media.title);
         lightboxMediaTitle.textContent = media.title;
+        lightboxContentFocus.focus();
     } else if (image === undefined) {
         let media = searchMediaId(mediaId);
         let videoPath = `assets/photos/${photographerID}/${media.video}`;
@@ -81,6 +83,7 @@ function openLightbox(mediaId) {
         lightboxVideo.setAttribute("alt", media.title);
         lightboxVideo.setAttribute("aria-label", media.title);
         lightboxMediaTitle.textContent = media.title;
+        lightboxContentFocus.focus();
     }
 
     document.addEventListener('keydown', keyboardHandler);

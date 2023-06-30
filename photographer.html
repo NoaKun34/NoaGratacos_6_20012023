@@ -35,51 +35,51 @@
   </div>
 
   <div class="lightboxContainer">
-    <div class="lightboxContent" aria-label="Media closeup view">
+    <div class="lightboxContent" aria-label="Media closeup view" tabindex="9">
       <img id="lightboxLeftArrow" src="assets/icons/left_arrow.png" alt="left_arrow" onclick="previousMedia()"
-        aria-label="Média précédent">
+        aria-label="Média précédent" tabindex="12">
       <div class="lightboxContentContainer">
-        <img id="lightboxContentImg" src="" alt="" aria-label="">
-        <video id="lightboxContentVideo" controls src="" alt="" aria-label=""></video>
-        <h1 id="lightboxContentTitle"></h1>
+        <img id="lightboxContentImg" src="" alt="" aria-label="" tabindex="10">
+        <video id="lightboxContentVideo" controls src="" alt="" aria-label="" tabindex="10"></video>
+        <h1 id="lightboxContentTitle" tabindex="11"></h1>
       </div>
       <div class="closeAndRight">
         <img id="closeLightbox" src="assets/icons/close.png" alt="" onclick="closeLightbox()"
-          aria-label="Fermer la modale">
+          aria-label="Fermer la modale" tabindex="14">
         <img id="lightboxRightArrow" src="assets/icons/right_arrow.png" alt="" onclick="nextMedia()"
-          aria-label="Média suivant">
+          aria-label="Média suivant" tabindex="13">
       </div>
     </div>
   </div>
 
   <div id="contact_modal">
-    <div class="modal">
+    <div class="modal" tabindex="9">
       <header>
-        <div class="contactHeaderTitle">
+        <div class="contactHeaderTitle" tabindex="10">
           <h2>Contactez-moi</h2>
           <h2 id="contactPhotographerName"></h2>
         </div>
-        <img id="contactClose" src="assets/icons/close.svg" onclick="closeModal()" aria-label="Fermer"/>
+        <img id="contactClose" src="assets/icons/close.svg" onclick="closeModal()" aria-label="Fermer" tabindex="20"/>
       </header>
       <form>
         <div>
-          <label id="contactLabelFirstname" for="firstname">Prénom</label>
-          <input type="text" id="firstname" name="firstname" aria-label="Prénom"/>
-          <label for="lastname">Nom</label>
-          <input type="text" id="lastname" name="lastname" aria-label="Nom"/>
-          <label for="email">Email</label>
-          <input type="text" id="email" name="email" aria-label="Email"/>
-          <label for="message">Message</label>
-          <input type="text" id="message" name="message" aria-label="Votre message"/>
+          <label id="contactLabelFirstname" for="firstname" tabindex="11">Prénom</label>
+          <input type="text" id="firstname" name="firstname" aria-label="Prénom" tabindex="12"/>
+          <label for="lastname" tabindex="13">Nom</label>
+          <input type="text" id="lastname" name="lastname" aria-label="Nom" tabindex="14"/>
+          <label for="email" tabindex="15">Email</label>
+          <input type="text" id="email" name="email" aria-label="Email" tabindex="16"/>
+          <label for="message" tabindex="17">Message</label>
+          <input type="text" id="message" name="message" aria-label="Votre message" tabindex="18"/>
         </div>
-        <button class="contact_button" aria-label="Envoyer">Envoyer</button>
+        <button class="contact_button" aria-label="Envoyer" tabindex="19">Envoyer</button>
       </form>
     </div>
   </div>
 
   <div class="tjmContainer">
     <div class="likesTotalContainer">
-      <p class="likesTotal"></p>
+      <p class="likesTotal" tabindex="6"></p>
       <img class="totalHeart" src="assets/icons/heartBlack.svg" alt="">
     </div>
     <p class="tjm"></p>
