@@ -1,9 +1,11 @@
 function displayModal() {
+    const label = 'Contact me ' + photographerName;
     const modal = document.getElementById("contact_modal");
     const modalContent = document.querySelector(".modal");
     const contactName = document.getElementById("contactPhotographerName");
     modal.style.display = "block";
     contactName.textContent = photographerName;
+    modalContent.setAttribute("aria-label", label);
     modalContent.focus();
 }
 
