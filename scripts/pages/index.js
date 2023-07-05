@@ -1,3 +1,5 @@
+import { photographerFactory } from "./../factories/photographerFactory";
+
 async function getPhotographers() {
     const dataPath = '../../data/photographers.json';
 
@@ -19,12 +21,12 @@ async function displayData(photographers) {
         const userCardDOM = photographerModel.getUserCardDOM();
         photographersSection.appendChild(userCardDOM);
     });
-};
+}
 
 async function init() {
     const { photographers } = await getPhotographers();
     displayData(photographers);
-};
+}
 
 init();
 

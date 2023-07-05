@@ -1,4 +1,6 @@
-function displayModal() {
+import { photographerName } from "./../pages/photographer.js";
+
+export function displayModal() {
     const label = 'Contact me ' + photographerName;
     const modal = document.getElementById("contact_modal");
     const modalContent = document.querySelector(".modal");
@@ -9,7 +11,7 @@ function displayModal() {
     modalContent.focus();
 }
 
-function closeModal() {
+export function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
 }

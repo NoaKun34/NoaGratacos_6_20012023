@@ -1,3 +1,6 @@
+import { mediaTable } from "../pages/photographers.js";
+import { photographerID } from "../pages/photographer.js";
+
 const lightboxContainer = document.querySelector('.lightboxContainer');
 const lightboxImage = document.querySelector('#lightboxContentImg');
 const lightboxVideo = document.querySelector('#lightboxContentVideo');
@@ -55,7 +58,7 @@ function keyboardHandler(event) {
     }
 }
 
-function openLightbox(mediaId) {
+export function openLightbox(mediaId) {
     const { image, video } = searchMediaId(mediaId);
     const lightboxContentFocus = document.querySelector('.lightboxContent');
     actualMediaId = mediaId;

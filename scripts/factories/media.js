@@ -1,4 +1,4 @@
-function selectFactory(data) {
+export function selectFactory(data) {
     const { image, video } = data;
     const dataContainer = document.querySelector(".dataContainer");
 

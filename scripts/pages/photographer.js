@@ -1,17 +1,20 @@
+import { selectFactory } from "./../factories/media.js";
+import { openLightbox } from "./../utils/lightbox.js";
+
 const url = new URL(location.href);
 const getParams = url.searchParams.get("id");
-const photographerID = parseInt(getParams);
-let photographerName = null;
+export const photographerID = parseInt(getParams);
+export let photographerName = null;
 
-let mediaTable = [];
+export let mediaTable = [];
 
-const popularity = document.getElementById("popularity");
-const date = document.getElementById("date");
-const alpha = document.getElementById("alpha");
+export const popularity = document.getElementById("popularity");
+export const date = document.getElementById("date");
+export const alpha = document.getElementById("alpha");
 
 const dataContainer = document.querySelector(".dataContainer");
 
-const mediaEnterClick = document.querySelector(".mediaEnter");
+export const mediaEnterClick = document.querySelector(".mediaEnter");
 
 const select = document.querySelector(".selectSort");
 
@@ -22,7 +25,7 @@ select.addEventListener("change", (event) => {
     displayMedia(mediaTable, parsedSortType);
 });
 
-function keyboardClick(event, elementType, id) {
+export function keyboardClick(event, elementType, id) {
     if (event.key === 'Enter') {
         if (elementType === 2 || elementType === 1) {
             openLightbox(id);
