@@ -153,7 +153,7 @@ function displayPhotographerData(data, id) {
     return photographerData;
 }
 
-function mediasLikes(mediaId) {
+export function mediasLikes(mediaId) {
     const elementId = `likes-${mediaId}`;
     const mediaLikeCounter = document.getElementById(elementId);
     const totalLikeCounter = document.querySelector(".likesTotal");

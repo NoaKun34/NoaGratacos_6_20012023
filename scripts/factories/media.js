@@ -1,4 +1,5 @@
 import { openLightbox } from "./../utils/lightbox.js";
+import { mediasLikes } from "./../pages/photographer.js";
 
 export function selectFactory(data) {
     const { image, video } = data;
@@ -65,8 +66,8 @@ function imageFactory(data) {
         heartElement.setAttribute("aria-label", "likes");
         heartElement.setAttribute("alt", "likes");
         heartElement.setAttribute("tabindex", "0");
-        heartElement.setAttribute('onclick', `mediasLikes(${id})`);
         heartElement.setAttribute('onkeydown', `keyboardClick(event, ${checkerHearth}, ${id})`);
+        heartElement.addEventListener('click', () => mediasLikes(id));
 
         infoElement.appendChild(titleElement);
         infoElement.appendChild(likesContainer);
@@ -123,8 +124,8 @@ function videoFactory(data) {
         heartElement.setAttribute("aria-label", "likes");
         heartElement.setAttribute("alt", "likes");
         heartElement.setAttribute("tabindex", "0");
-        heartElement.setAttribute('onclick', `mediasLikes(${id})`);
         heartElement.setAttribute('onkeydown', `keyboardClick(event, ${checkerHearth}, ${id})`);
+        heartElement.addEventListener('click', () => mediasLikes(id));
 
         const infoElement = document.createElement('div');
         infoElement.setAttribute("class", "mediaInfo");
