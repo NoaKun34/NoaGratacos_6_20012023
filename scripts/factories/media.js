@@ -1,3 +1,5 @@
+import { openLightbox } from "./../utils/lightbox.js";
+
 export function selectFactory(data) {
     const { image, video } = data;
     const dataContainer = document.querySelector(".dataContainer");
@@ -35,8 +37,9 @@ function imageFactory(data) {
         img.setAttribute("class", "mediaEnter");
         img.setAttribute("tabindex", "0");
         img.setAttribute("aria-label", aria);
-        img.setAttribute('onclick', `openLightbox(${id})`);
+        //img.setAttribute('onclick', `openLightbox(${id})`);
         img.setAttribute('onkeydown', `keyboardClick(event, ${checker}, ${id})`);
+        img.addEventListener('click', () => openLightbox(id));
 
         const descContainer = document.createElement('div');
         descContainer.setAttribute("class", "desc");

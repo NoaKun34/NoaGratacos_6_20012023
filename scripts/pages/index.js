@@ -1,4 +1,4 @@
-import { photographerFactory } from "./../factories/photographerFactory";
+import { photographerFactory } from "./../factories/photographer.js";
 
 async function getPhotographers() {
     const dataPath = '../../data/photographers.json';

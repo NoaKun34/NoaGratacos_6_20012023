@@ -1,5 +1,11 @@
 import { photographerName } from "./../pages/photographer.js";
 
+const buttonOpenModal = document.querySelector(".contact_button");
+buttonOpenModal.addEventListener("click", displayModal);
+
+const buttonCloseModal = document.getElementById("contactClose");
+buttonCloseModal.addEventListener("click", closeModal);
+
 export function displayModal() {
     const label = 'Contact me ' + photographerName;
     const modal = document.getElementById("contact_modal");

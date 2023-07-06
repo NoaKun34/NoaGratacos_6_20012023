@@ -19,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/NoaKun34/NoaGratacos_6_20012023/issues"
   },
-  "homepage": "https://github.com/NoaKun34/NoaGratacos_6_20012023#readme"
+  "homepage": "https://github.com/NoaKun34/NoaGratacos_6_20012023#readme",
+  "type": "module"
 }

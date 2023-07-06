@@ -17,7 +17,7 @@
   <main id="main">
     <div class="photograph-header">
       <div class="photographerInfo"></div>
-      <button class="contact_button" onclick="displayModal()" aria-label="Me contacter" tabindex="4">Contactez-moi</button>
+      <button class="contact_button" aria-label="Me contacter" tabindex="4">Contactez-moi</button>
       <img id="photographerSelfi" alt="" tabindex="5">
     </div>
   </main>
@@ -36,7 +36,7 @@
 
   <div class="lightboxContainer">
     <div class="lightboxContent" aria-label="Media closeup view" tabindex="9">
-      <img id="lightboxLeftArrow" src="assets/icons/left_arrow.png" alt="left_arrow" onclick="previousMedia()"
+      <img id="lightboxLeftArrow" src="assets/icons/left_arrow.png" alt="left_arrow"
         aria-label="Média précédent" tabindex="12">
       <div class="lightboxContentContainer">
         <img id="lightboxContentImg" src="" alt="" aria-label="" tabindex="10">
@@ -44,9 +44,9 @@
         <h1 id="lightboxContentTitle" tabindex="11"></h1>
       </div>
       <div class="closeAndRight">
-        <img id="closeLightbox" src="assets/icons/close.png" alt="" onclick="closeLightbox()"
+        <img id="closeLightbox" src="assets/icons/close.png" alt=""
           aria-label="Fermer la modale" tabindex="14">
-        <img id="lightboxRightArrow" src="assets/icons/right_arrow.png" alt="" onclick="nextMedia()"
+        <img id="lightboxRightArrow" src="assets/icons/right_arrow.png" alt=""
           aria-label="Média suivant" tabindex="13">
       </div>
     </div>
@@ -59,7 +59,7 @@
           <h2>Contactez-moi</h2>
           <h2 id="contactPhotographerName"></h2>
         </div>
-        <img id="contactClose" src="assets/icons/close.svg" onclick="closeModal()" aria-label="Fermer" tabindex="20"/>
+        <img id="contactClose" src="assets/icons/close.svg" aria-label="Fermer" tabindex="20"/>
       </header>
       <form>
         <div>
@@ -84,10 +84,10 @@
     </div>
     <p class="tjm"></p>
   </div>
-  <script src="/scripts/factories/media.js"></script>
-  <script src="/scripts/pages/photographer.js"></script>
-  <script src="/scripts/utils/contactForm.js"></script>
-  <script src="/scripts/utils/lightbox.js"></script>
+  <script type="module" src="/scripts/factories/media.js"></script>
+  <script type="module" src="/scripts/pages/photographer.js"></script>
+  <script type="module" src="/scripts/utils/contactForm.js"></script>
+  <script type="module" src="/scripts/utils/lightbox.js"></script>
 </body>
 
 </html>

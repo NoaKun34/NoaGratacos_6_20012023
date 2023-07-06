@@ -1,5 +1,5 @@
-import { mediaTable } from "../pages/photographers.js";
-import { photographerID } from "../pages/photographer.js";
+import { mediaTable } from "./../pages/photographer.js";
+import { photographerID } from "./../pages/photographer.js";
 
 const lightboxContainer = document.querySelector('.lightboxContainer');
 const lightboxImage = document.querySelector('#lightboxContentImg');
@@ -7,7 +7,15 @@ const lightboxVideo = document.querySelector('#lightboxContentVideo');
 const lightboxMediaTitle = document.querySelector('#lightboxContentTitle');
 let actualMediaId = null;
 
-function previousMedia() {
+const previousArrow = document.getElementById('lightboxLeftArrow');
+const nextArrow = document.getElementById('lightboxRightArrow');
+const closeLightboxBtn = document.getElementById('closeLightbox');
+
+previousArrow.addEventListener('click', previousMedia);
+nextArrow.addEventListener('click', nextMedia);
+closeLightboxBtn.addEventListener('click', closeLightbox);
+
+export function previousMedia() {
     const currentMediaIndex = mediaTable.findIndex(media => media.id === actualMediaId);
     const previousMediaIndex = currentMediaIndex - 1;
     if (previousMediaIndex < 0) {
@@ -19,7 +27,7 @@ function previousMedia() {
     }
 }
 
-function nextMedia() {
+export function nextMedia() {
     const currentMediaIndex = mediaTable.findIndex(media => media.id === actualMediaId);
     const nextMediaIndex = currentMediaIndex + 1;
     if (nextMediaIndex >= mediaTable.length) {
@@ -31,7 +39,7 @@ function nextMedia() {
     }
 }
 
-function closeLightbox() {
+export function closeLightbox() {
     lightboxContainer.style.display = 'none';
     lightboxImage.style.display = 'none';
     lightboxVideo.style.display = 'none';
