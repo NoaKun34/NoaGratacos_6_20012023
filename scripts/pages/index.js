@@ -10,6 +10,7 @@ async function getPhotographers() {
         return data;
     } catch (err) {
         console.log("Erreur")
+        console.log(err);
     }
 }
 
