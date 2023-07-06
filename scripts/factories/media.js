@@ -37,7 +37,6 @@ function imageFactory(data) {
         img.setAttribute("class", "mediaEnter");
         img.setAttribute("tabindex", "0");
         img.setAttribute("aria-label", aria);
-        //img.setAttribute('onclick', `openLightbox(${id})`);
         img.setAttribute('onkeydown', `keyboardClick(event, ${checker}, ${id})`);
         img.addEventListener('click', () => openLightbox(id));
 
@@ -103,9 +102,9 @@ function videoFactory(data) {
         video.setAttribute("id", id);
         video.setAttribute("class", "mediaEnter");
         video.setAttribute("tabindex", "0");
-        video.setAttribute('onclick', `openLightbox(${id})`);
         video.setAttribute("aria-label", aria);
         video.setAttribute('onkeydown', `keyboardClick(event, ${checker}, ${id})`);
+        video.addEventListener('click', () => openLightbox(id));
 
         const descContainer = document.createElement('div');
         descContainer.setAttribute("class", "desc");
