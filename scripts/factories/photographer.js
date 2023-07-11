@@ -1,4 +1,3 @@
-
 export function photographerFactory(data) {
     const { name, id, city, country, tagline, price, portrait } = data;
 
