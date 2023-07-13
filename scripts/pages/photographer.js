@@ -61,7 +61,7 @@ function totalLikes(data) {
     return totalLikes;
 }
 
-async function displayMedia(data, sortType) {
+function displayMedia(data, sortType) {
     const sorted = mediaSort(data, sortType);
 
     totalLikes(data);
@@ -69,7 +69,7 @@ async function displayMedia(data, sortType) {
     sorted.forEach((media) => {
         selectFactory(media);
     });
-    return sorted;
+    return;
 }
 
 function searchMedia(data, photographerId) {

@@ -19,7 +19,9 @@ export function previousMedia() {
     const currentMediaIndex = mediaTable.findIndex(media => media.id === actualMediaId);
     const previousMediaIndex = currentMediaIndex - 1;
     if (previousMediaIndex < 0) {
-        return null;
+        let lastMedia = mediaTable[mediaTable.length - 1].id;
+        openLightbox(lastMedia);
+        return mediaTable[lastMedia];
     } else {
         let previousMedia = mediaTable[previousMediaIndex].id;
         openLightbox(previousMedia);
@@ -31,7 +33,9 @@ export function nextMedia() {
     const currentMediaIndex = mediaTable.findIndex(media => media.id === actualMediaId);
     const nextMediaIndex = currentMediaIndex + 1;
     if (nextMediaIndex >= mediaTable.length) {
-        return null;
+        let firstMedia = mediaTable[0].id;
+        openLightbox(firstMedia);
+        return mediaTable[firstMedia];
     } else {
         let nextMedia = mediaTable[nextMediaIndex].id;
         openLightbox(nextMedia);

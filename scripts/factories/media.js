@@ -1,5 +1,6 @@
 import { openLightbox } from "./../utils/lightbox.js";
 import { mediasLikes } from "./../pages/photographer.js";
+import { keyboardClick } from "./../pages/photographer.js";
 
 export function selectFactory(data) {
     const { image, video } = data;
@@ -15,7 +16,7 @@ export function selectFactory(data) {
         dataContainer.appendChild(imageDOM);
     }
 
-    return 0;
+    return;
 }
 
 function imageFactory(data) {
@@ -38,8 +39,8 @@ function imageFactory(data) {
         img.setAttribute("class", "mediaEnter");
         img.setAttribute("tabindex", "0");
         img.setAttribute("aria-label", aria);
-        img.setAttribute('onkeydown', `keyboardClick(event, ${checker}, ${id})`);
         img.addEventListener('click', () => openLightbox(id));
+        img.addEventListener('keydown', (event) => keyboardClick(event, checker, id));
 
         const descContainer = document.createElement('div');
         descContainer.setAttribute("class", "desc");
@@ -66,8 +67,8 @@ function imageFactory(data) {
         heartElement.setAttribute("aria-label", "likes");
         heartElement.setAttribute("alt", "likes");
         heartElement.setAttribute("tabindex", "0");
-        heartElement.setAttribute('onkeydown', `keyboardClick(event, ${checkerHearth}, ${id})`);
         heartElement.addEventListener('click', () => mediasLikes(id));
+        heartElement.addEventListener('keydown', (event) => keyboardClick(event, checkerHearth, id));
 
         infoElement.appendChild(titleElement);
         infoElement.appendChild(likesContainer);
@@ -104,8 +105,8 @@ function videoFactory(data) {
         video.setAttribute("class", "mediaEnter");
         video.setAttribute("tabindex", "0");
         video.setAttribute("aria-label", aria);
-        video.setAttribute('onkeydown', `keyboardClick(event, ${checker}, ${id})`);
         video.addEventListener('click', () => openLightbox(id));
+        video.addEventListener('keydown', (event) => keyboardClick(event, checker, id));
 
         const descContainer = document.createElement('div');
         descContainer.setAttribute("class", "desc");
@@ -124,8 +125,8 @@ function videoFactory(data) {
         heartElement.setAttribute("aria-label", "likes");
         heartElement.setAttribute("alt", "likes");
         heartElement.setAttribute("tabindex", "0");
-        heartElement.setAttribute('onkeydown', `keyboardClick(event, ${checkerHearth}, ${id})`);
         heartElement.addEventListener('click', () => mediasLikes(id));
+        heartElement.addEventListener('keydown', (event) => keyboardClick(event, checkerHearth, id));
 
         const infoElement = document.createElement('div');
         infoElement.setAttribute("class", "mediaInfo");
